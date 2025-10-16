@@ -1,49 +1,28 @@
-# lightningjs
+# Ocean Notes - LightningJS Frontend
 
-### lightningjs
+A modern personal notes manager built with LightningJS (Blits), featuring a sidebar, editor, and localStorage persistence. Styled with the Ocean Professional theme.
 
+Features:
+- Two-pane layout: Sidebar (search, new note, list) + Main editor
+- Create, select, edit, and delete notes
+- Autosave (500ms debounce) and manual save (Ctrl/Cmd+S)
+- Keyboard shortcut for new note (Ctrl/Cmd+N)
+- Notes persisted in localStorage under key `notes_v1`
+- Search filters notes by title and content
+- Modern theme with rounded corners and subtle shadows
+- Accessible labels and focus outlines
+- No external services or environment variables required
 
-Welcome to the _lightningjs_ Lightning 3 Blits App!
+Run locally:
+1. Install dependencies
+   - npm install
+2. Start dev server (port 3000)
+   - npm run dev
+3. Open http://localhost:3000
 
-### Getting started
+Data model:
+- Note: { id: string, title: string, content: string, updatedAt: number } stored in localStorage.
 
-Follow the steps below to get your Lightning 3 Blits App up and running in no time.
-
-#### IDE setup
-
-It is highly recommended to install the Blits [VS-code extension](https://marketplace.visualstudio.com/items?itemName=LightningJS.lightning-blits) which will give you template highlighting and improved autocompletion.
-
-#### Project setup
-
-Run the following command to install the dependencies of your App:
-
-```sh
-npm install
-```
-
-#### Build and run in development mode
-
-Run your App in development mode:
-
-```sh
-npm run dev
-```
-
-This command uses Vite to fire up a local server, with Hot Reloading support. Visit the provided link in your web browser to see the App in action.
-
-#### Build the App for production
-
-Create an optimized and minified version of your App:
-
-```sh
-npm run build
-```
-
-This will create a production version of the app in the `dist` folder.
-
-
-### Resources
-
-- [Blits documentation](https://lightningjs.io/v3-docs/blits/getting_started/intro.html) - official documentation
-- [Blits Example App](https://blits-demo.lightningjs.io/?source=true) - a great reference to learn by example
-- [Blits Components](https://lightningjs.io/blits-components.html) - off-the-shelf, basic and performant reference components
+Notes:
+- LightningJS renders via WebGL; UI is defined in Blits components (no DOM manipulation).
+- The root element is #app and the app entry is src/index.js.
